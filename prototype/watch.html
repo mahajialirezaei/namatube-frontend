@@ -6,7 +6,6 @@
     <title>VidStream – Watch video</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/watch.css">
-
 </head>
 <body>
 
@@ -23,19 +22,18 @@
 </div>
 
 <div class="watch-container">
-    <!-- main video area -->
     <div class="video-section">
-        <div class="player">
-            <div class="player-placeholder">
+        <!-- Player with blurred thumbnail background and visible text overlay -->
+        <div class="player" id="playerContainer">
+            <!-- blurred background will be added dynamically -->
+            <div class="player-placeholder" id="playerPlaceholder">
                 🎬 Video player simulation<br>
                 (thumbnail preview / embedded player)
             </div>
         </div>
-        <div class="video-title">
-            Microservices Architecture in Cloud – Full Course
-        </div>
+        <div class="video-title" id="videoTitle">Loading...</div>
         <div class="video-meta">
-            <div class="stats">24,891 views • Mar 15, 2026</div>
+            <div class="stats" id="videoStats">Loading views...</div>
             <div class="actions">
                 <button>👍 1.2K</button>
                 <button>👎 24</button>
@@ -45,15 +43,15 @@
         </div>
         <div class="channel-info">
             <div class="channel-details">
-                <div class="avatar">DM</div>
+                <div class="avatar" id="channelAvatar">DM</div>
                 <div>
-                    <div style="font-weight: bold;">DevMind Academy</div>
-                    <div style="font-size: 0.8rem; color:#9ca3af;">128K subscribers</div>
+                    <div style="font-weight: bold;" id="channelName">Channel Name</div>
+                    <div style="font-size: 0.8rem; color:#9ca3af;" id="subscriberCount">Subscribers</div>
                 </div>
             </div>
             <button class="subscribe-btn">+ Subscribe</button>
         </div>
-        <div class="description">
+        <div class="description" id="description">
             <p>🔥 In this deep dive you'll learn:</p>
             <ul style="margin-top: 0.5rem; margin-left: 1.2rem;">
                 <li>Microservices vs Monolith</li>
@@ -89,31 +87,24 @@
     <div class="recommendations">
         <h3 style="margin-bottom: 1rem;">Recommended for you</h3>
         <div class="rec-card" onclick="location.href='watch.html'">
-            <div class="rec-thumb" style="background-image: url('https://placehold.co/120x70/2d3748/f97316?text=NAT');"></div>
+            <div class="rec-thumb" style="background-image: url('assets/images/Subnetting.jpg'); background-size: cover;"></div>
             <div class="rec-info">
-                <div class="rec-title">NAT & PAT explained</div>
-                <div style="font-size:0.7rem">NetPro • 8K views</div>
+                <div class="rec-title">Subnetting, NAT & DHCP</div>
+                <div style="font-size:0.7rem">NetPro • 12K views</div>
             </div>
         </div>
         <div class="rec-card" onclick="location.href='watch.html'">
-            <div class="rec-thumb" style="background-image: url('https://placehold.co/120x70/1e293b/facc15?text=DHCP');"></div>
+            <div class="rec-thumb" style="background-image: url('assets/images/containers-vms.png'); background-size: cover;"></div>
             <div class="rec-info">
-                <div class="rec-title">DHCP server configuration</div>
-                <div style="font-size:0.7rem">IT Academy • 12K views</div>
+                <div class="rec-title">Containers vs VMs</div>
+                <div style="font-size:0.7rem">CloudNative Hub • 19K views</div>
             </div>
         </div>
         <div class="rec-card" onclick="location.href='watch.html'">
-            <div class="rec-thumb" style="background-image: url('https://placehold.co/120x70/2c3e50/f97316?text=IPv6');"></div>
+            <div class="rec-thumb" style="background-image: url('assets/images/private-public-ipv4.png'); background-size: cover;"></div>
             <div class="rec-info">
-                <div class="rec-title">IPv4 vs IPv6 & transition</div>
-                <div style="font-size:0.7rem">NetNinja • 5.5K views</div>
-            </div>
-        </div>
-        <div class="rec-card" onclick="location.href='watch.html'">
-            <div class="rec-thumb" style="background-image: url('https://placehold.co/120x70/232a3a/facc15?text=subnet');"></div>
-            <div class="rec-info">
-                <div class="rec-title">Subnetting practice /24→/26</div>
-                <div style="font-size:0.7rem">Cisco Lab • 21K views</div>
+                <div class="rec-title">IPv4 address types</div>
+                <div style="font-size:0.7rem">NetNinja • 4.3K views</div>
             </div>
         </div>
     </div>
@@ -122,5 +113,7 @@
 <div class="footer">
     <p>© VidStream — prototype for system analysis & design | watch page</p>
 </div>
+
+<script src="js/recieve-video.js"></script>
 </body>
 </html>
