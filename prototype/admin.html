@@ -6,6 +6,36 @@
     <title>VidStream – Admin Panel</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/admin.css">
+    <!-- اضافه کردن استایل اضطراری برای دکمه‌ها در صورت عدم بارگذاری CSS -->
+    <style>
+        /* fallback style for buttons in case external CSS fails */
+        button {
+            background-color: #3b3f4e;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            font-size: 0.75rem;
+            margin: 0 0.2rem;
+            transition: 0.2s;
+        }
+        button.danger {
+            background-color: #b91c1c;
+        }
+        button.danger:hover {
+            background-color: #dc2626;
+        }
+        button:hover:not(.danger) {
+            background-color: var(--accent, #f97316);
+            color: #0b0c10;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+    </style>
 </head>
 <body>
 
@@ -60,7 +90,7 @@
             </div>
         </div>
 
-        <!-- NETWORK MANAGEMENT (non-functional requirements) -->
+        <!-- NETWORK MANAGEMENT -->
         <div class="network-section">
             <h3>🌐 Network Infrastructure Status</h3>
             <p>IPv4 addressing, NAT, DHCP & Subnetting simulation</p>
@@ -95,7 +125,7 @@
             </div>
         </div>
 
-        <!-- User management table -->
+        <!-- User management table with enhanced action buttons -->
         <div class="user-table-section">
             <h3>👥 User Management</h3>
             <table>
@@ -103,23 +133,53 @@
                 <tr><th>User ID</th><th>Username</th><th>Role</th><th>Status</th><th>Actions</th></tr>
                 </thead>
                 <tbody>
-                <tr><td>101</td><td>john_doe</td><td>Creator</td><td><span class="status-badge">Active</span></td><td><button class="danger">Disable</button> <button>Edit</button></td></tr>
-                <tr><td>102</td><td>alice_vids</td><td>Viewer</td><td><span class="status-badge">Active</span></td><td><button class="danger">Disable</button> <button>Edit</button></td></tr>
-                <tr><td>103</td><td>tech_farah</td><td>Admin</td><td><span class="status-badge">Active</span></td><td><button>Edit</button></td></tr>
-                <tr><td>104</td><td>spam_account</td><td>Viewer</td><td><span class="status-badge" style="background-color:#b91c1c;">Suspended</span></td><td><button>Enable</button></td></tr>
+                <tr>
+                    <td>101</td><td>john_doe</td><td>Creator</td>
+                    <td><span class="status-badge">Active</span></td>
+                    <td class="action-buttons">
+                        <button class="danger" title="Disable user">🚫 Disable</button>
+                        <button title="Edit user">✏️ Edit</button>
+                        <button title="View details">👁️ View</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>102</td><td>alice_vids</td><td>Viewer</td>
+                    <td><span class="status-badge">Active</span></td>
+                    <td class="action-buttons">
+                        <button class="danger" title="Disable user">🚫 Disable</button>
+                        <button title="Edit user">✏️ Edit</button>
+                        <button title="View details">👁️ View</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>103</td><td>tech_farah</td><td>Admin</td>
+                    <td><span class="status-badge">Active</span></td>
+                    <td class="action-buttons">
+                        <button title="Edit user">✏️ Edit</button>
+                        <button title="View details">👁️ View</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>104</td><td>spam_account</td><td>Viewer</td>
+                    <td><span class="status-badge" style="background-color:#b91c1c;">Suspended</span></td>
+                    <td class="action-buttons">
+                        <button title="Enable user">✅ Enable</button>
+                        <button class="danger" title="Delete user">🗑️ Delete</button>
+                    </td>
+                </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- Reports section -->
+        <!-- Reports section with action buttons -->
         <div class="user-table-section">
             <h3>📊 Platform Reports</h3>
             <table>
                 <thead><tr><th>Report type</th><th>Period</th><th>Download</th></tr></thead>
                 <tbody>
-                <tr><td>Video views summary</td><td>Last 7 days</td><td><button>CSV</button></td></tr>
-                <tr><td>User registration trend</td><td>Monthly</td><td><button>CSV</button></td></tr>
-                <tr><td>Network utilization (NAT/DHCP)</td><td>Real-time</td><td><button>JSON</button></td></tr>
+                <tr><td>Video views summary</td><td>Last 7 days</td><td><button>📥 CSV</button></td></tr>
+                <tr><td>User registration trend</td><td>Monthly</td><td><button>📥 CSV</button></td></tr>
+                <tr><td>Network utilization (NAT/DHCP)</td><td>Real-time</td><td><button>📥 JSON</button></td></tr>
                 </tbody>
             </table>
         </div>
@@ -127,7 +187,7 @@
 </div>
 
 <div class="footer">
-    <p>© VidStream — Admin panel | prototype for system analysis & design</p>
+    <p>© VidStream — Admin panel | prototype for system analysis & design (static prototype, buttons are non-functional)</p>
 </div>
 </body>
 </html>
