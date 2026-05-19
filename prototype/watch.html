@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidStream – Watch video</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/watch.css">
+
+</head>
+<body>
+
+<div class="header">
+    <div class="logo" onclick="location.href='index.html'">✦ VIDSTREAM</div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button>🔍</button>
+    </div>
+    <div class="user-actions">
+        <a href="upload.html">+ Upload</a>
+        <a href="login.html">Sign in</a>
+    </div>
+</div>
+
+<div class="watch-container">
+    <!-- main video area -->
+    <div class="video-section">
+        <div class="player">
+            <div class="player-placeholder">
+                🎬 Video player simulation<br>
+                (thumbnail preview / embedded player)
+            </div>
+        </div>
+        <div class="video-title">
+            Microservices Architecture in Cloud – Full Course
+        </div>
+        <div class="video-meta">
+            <div class="stats">24,891 views • Mar 15, 2026</div>
+            <div class="actions">
+                <button>👍 1.2K</button>
+                <button>👎 24</button>
+                <button>🔖 Save</button>
+                <button>↗️ Share</button>
+            </div>
+        </div>
+        <div class="channel-info">
+            <div class="channel-details">
+                <div class="avatar">DM</div>
+                <div>
+                    <div style="font-weight: bold;">DevMind Academy</div>
+                    <div style="font-size: 0.8rem; color:#9ca3af;">128K subscribers</div>
+                </div>
+            </div>
+            <button class="subscribe-btn">+ Subscribe</button>
+        </div>
+        <div class="description">
+            <p>🔥 In this deep dive you'll learn:</p>
+            <ul style="margin-top: 0.5rem; margin-left: 1.2rem;">
+                <li>Microservices vs Monolith</li>
+                <li>Service discovery & API Gateway</li>
+                <li>Resilience patterns (circuit breaker)</li>
+                <li>Container orchestration with k8s</li>
+            </ul>
+            <p style="margin-top: 0.8rem;">📌 Perfect for system analysis & design project.</p>
+        </div>
+
+        <!-- comments section -->
+        <div class="comments-section">
+            <h3>Comments (134)</h3>
+            <div class="comment">
+                <span class="comment-user">Alex Rivera</span>
+                <p>Great explanation of NAT and subnetting references! Very helpful for my project.</p>
+                <small>2 days ago</small>
+            </div>
+            <div class="comment">
+                <span class="comment-user">Samira K.</span>
+                <p>I love the design of this platform. Clean and modern.</p>
+                <small>1 day ago</small>
+            </div>
+            <div class="comment">
+                <span class="comment-user">Chris Wong</span>
+                <p>When will the DHCP deep dive be uploaded?</p>
+                <small>5 hours ago</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- recommended videos sidebar -->
+    <div class="recommendations">
+        <h3 style="margin-bottom: 1rem;">Recommended for you</h3>
+        <div class="rec-card" onclick="location.href='watch.html'">
+            <div class="rec-thumb" style="background-image: url('https://placehold.co/120x70/2d3748/f97316?text=NAT');"></div>
+            <div class="rec-info">
+                <div class="rec-title">NAT & PAT explained</div>
+                <div style="font-size:0.7rem">NetPro • 8K views</div>
+            </div>
+        </div>
+        <div class="rec-card" onclick="location.href='watch.html'">
+            <div class="rec-thumb" style="background-image: url('https://placehold.co/120x70/1e293b/facc15?text=DHCP');"></div>
+            <div class="rec-info">
+                <div class="rec-title">DHCP server configuration</div>
+                <div style="font-size:0.7rem">IT Academy • 12K views</div>
+            </div>
+        </div>
+        <div class="rec-card" onclick="location.href='watch.html'">
+            <div class="rec-thumb" style="background-image: url('https://placehold.co/120x70/2c3e50/f97316?text=IPv6');"></div>
+            <div class="rec-info">
+                <div class="rec-title">IPv4 vs IPv6 & transition</div>
+                <div style="font-size:0.7rem">NetNinja • 5.5K views</div>
+            </div>
+        </div>
+        <div class="rec-card" onclick="location.href='watch.html'">
+            <div class="rec-thumb" style="background-image: url('https://placehold.co/120x70/232a3a/facc15?text=subnet');"></div>
+            <div class="rec-info">
+                <div class="rec-title">Subnetting practice /24→/26</div>
+                <div style="font-size:0.7rem">Cisco Lab • 21K views</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>© VidStream — prototype for system analysis & design | watch page</p>
+</div>
+</body>
+</html>

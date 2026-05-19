@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidStream – Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="logo" onclick="location.href='index.html'">✦ VIDSTREAM</div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search admin...">
+        <button>🔍</button>
+    </div>
+    <div class="user-actions">
+        <a href="upload.html">+ Upload</a>
+        <a href="login.html">Sign in (Admin)</a>
+    </div>
+</div>
+
+<div class="container">
+    <aside class="sidebar">
+        <ul>
+            <li>🏠 Home</li>
+            <li>🔥 Trending</li>
+            <li>📺 Subscriptions</li>
+            <li>📚 Library</li>
+            <li>⏱️ History</li>
+            <li>👤 My Channel</li>
+            <li style="background-color: #2a2e3c; color: var(--accent);">⚙️ Admin panel</li>
+        </ul>
+    </aside>
+
+    <main class="admin-panel">
+        <div class="admin-header">
+            <h2>⚙️ Administration Dashboard</h2>
+            <p>Manage users, network, and platform health</p>
+        </div>
+
+        <!-- quick stats -->
+        <div class="admin-stats">
+            <div class="stat-card">
+                <div class="stat-value">1,284</div>
+                <div>Total Users</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">3.2K</div>
+                <div>Videos uploaded</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">47</div>
+                <div>Reports pending</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">99.97%</div>
+                <div>Uptime (last 30d)</div>
+            </div>
+        </div>
+
+        <!-- NETWORK MANAGEMENT (non-functional requirements) -->
+        <div class="network-section">
+            <h3>🌐 Network Infrastructure Status</h3>
+            <p>IPv4 addressing, NAT, DHCP & Subnetting simulation</p>
+            <div class="network-grid">
+                <div class="network-card">
+                    <strong>Subnetting example</strong><br>
+                    192.168.1.0/24 → 4 subnets /26<br>
+                    Subnet A: 192.168.1.0/26 (1-62)<br>
+                    Subnet B: 192.168.1.64/26<br>
+                    Subnet C: 192.168.1.128/26<br>
+                    Subnet D: 192.168.1.192/26
+                </div>
+                <div class="network-card">
+                    <strong>NAT rules (active)</strong><br>
+                    • Static NAT: 203.0.113.5 → 10.0.0.25<br>
+                    • Dynamic NAT pool (10.0.0.50-10.0.0.80)<br>
+                    • PAT (overload) for outbound traffic
+                </div>
+                <div class="network-card">
+                    <strong>DHCP scope</strong><br>
+                    Range: 10.0.0.100 – 10.0.0.200<br>
+                    Lease: 24h, Gateway: 10.0.0.1<br>
+                    DNS: 8.8.8.8, 1.1.1.1
+                </div>
+                <div class="network-card">
+                    <strong>IPv4 address types</strong><br>
+                    Private: 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16<br>
+                    Public: 203.0.113.0/24<br>
+                    Test‑Net: 192.0.2.0/24<br>
+                    Special: 127.0.0.0/8, 224.0.0.0/4
+                </div>
+            </div>
+        </div>
+
+        <!-- User management table -->
+        <div class="user-table-section">
+            <h3>👥 User Management</h3>
+            <table>
+                <thead>
+                <tr><th>User ID</th><th>Username</th><th>Role</th><th>Status</th><th>Actions</th></tr>
+                </thead>
+                <tbody>
+                <tr><td>101</td><td>john_doe</td><td>Creator</td><td><span class="status-badge">Active</span></td><td><button class="danger">Disable</button> <button>Edit</button></td></tr>
+                <tr><td>102</td><td>alice_vids</td><td>Viewer</td><td><span class="status-badge">Active</span></td><td><button class="danger">Disable</button> <button>Edit</button></td></tr>
+                <tr><td>103</td><td>tech_farah</td><td>Admin</td><td><span class="status-badge">Active</span></td><td><button>Edit</button></td></tr>
+                <tr><td>104</td><td>spam_account</td><td>Viewer</td><td><span class="status-badge" style="background-color:#b91c1c;">Suspended</span></td><td><button>Enable</button></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Reports section -->
+        <div class="user-table-section">
+            <h3>📊 Platform Reports</h3>
+            <table>
+                <thead><tr><th>Report type</th><th>Period</th><th>Download</th></tr></thead>
+                <tbody>
+                <tr><td>Video views summary</td><td>Last 7 days</td><td><button>CSV</button></td></tr>
+                <tr><td>User registration trend</td><td>Monthly</td><td><button>CSV</button></td></tr>
+                <tr><td>Network utilization (NAT/DHCP)</td><td>Real-time</td><td><button>JSON</button></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+<div class="footer">
+    <p>© VidStream — Admin panel | prototype for system analysis & design</p>
+</div>
+</body>
+</html>
