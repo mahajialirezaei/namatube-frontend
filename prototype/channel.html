@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidStream – My Channel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/channel.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="logo" onclick="location.href='index.html'">✦ VIDSTREAM</div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button>🔍</button>
+    </div>
+    <div class="user-actions">
+        <a href="upload.html">+ Upload</a>
+        <a href="login.html">Sign in</a>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 1rem;">
+    <aside class="sidebar">
+        <ul>
+            <li>🏠 Home</li>
+            <li>🔥 Trending</li>
+            <li>📺 Subscriptions</li>
+            <li>📚 Library</li>
+            <li>⏱️ History</li>
+            <li style="background-color: #2a2e3c; color: var(--accent);">👤 My Channel</li>
+            <li>⚙️ Admin panel</li>
+        </ul>
+    </aside>
+
+    <main style="flex: 1;">
+        <div class="channel-banner">
+            <div class="channel-avatar">DM</div>
+        </div>
+        <div class="channel-info">
+            <div class="channel-name">
+                <h1>DevMind Academy</h1>
+                <div class="channel-stats">128K subscribers • 342 videos</div>
+            </div>
+            <button class="subscribe-btn-large" onclick="alert('Demo: Subscribed (static prototype)')">✔ Subscribed</button>
+        </div>
+
+        <div class="channel-tabs">
+            <div class="tab-channel active" data-tab="videos">Videos</div>
+            <div class="tab-channel" data-tab="playlists">Playlists</div>
+            <div class="tab-channel" data-tab="about">About</div>
+        </div>
+
+        <div id="videosTab" class="tab-content">
+            <div class="video-grid-channel">
+                <div class="video-card" onclick="location.href='watch.html'">
+                    <div class="thumbnail" style="background-image: url('https://placehold.co/400x225/2d3748/f97316?text=Microservices');"></div>
+                    <div class="video-info">
+                        <div class="video-title">Microservices Architecture in Cloud</div>
+                        <div class="video-stats">24K views • 3 weeks ago</div>
+                    </div>
+                </div>
+                <div class="video-card" onclick="location.href='watch.html'">
+                    <div class="thumbnail" style="background-image: url('https://placehold.co/400x225/1e293b/facc15?text=NAT+DHCP');"></div>
+                    <div class="video-info">
+                        <div class="video-title">Subnetting, NAT & DHCP – Full course</div>
+                        <div class="video-stats">12K views • 1 month ago</div>
+                    </div>
+                </div>
+                <div class="video-card" onclick="location.href='watch.html'">
+                    <div class="thumbnail" style="background-image: url('https://placehold.co/400x225/232a3a/f97316?text=Docker');"></div>
+                    <div class="video-info">
+                        <div class="video-title">Containers vs VMs: scalability</div>
+                        <div class="video-stats">19K views • 2 months ago</div>
+                    </div>
+                </div>
+                <div class="video-card" onclick="location.href='watch.html'">
+                    <div class="thumbnail" style="background-image: url('https://placehold.co/400x225/2c3e50/facc15?text=REST+API');"></div>
+                    <div class="video-info">
+                        <div class="video-title">RESTful API design for video platforms</div>
+                        <div class="video-stats">9.7K views • 3 months ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Playlists tab (hidden by default) -->
+        <div id="playlistsTab" class="tab-content" style="display: none;">
+            <div class="video-grid-channel">
+                <div class="video-card">
+                    <div class="thumbnail" style="background-image: url('https://placehold.co/400x225/2d3748/f97316?text=Cloud+Playlist');"></div>
+                    <div class="video-info">
+                        <div class="video-title">☁️ Cloud Computing Series</div>
+                        <div class="video-stats">8 videos • 45K total views</div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="thumbnail" style="background-image: url('https://placehold.co/400x225/1e293b/facc15?text=Network+Basics');"></div>
+                    <div class="video-info">
+                        <div class="video-title">🌐 Networking for Developers</div>
+                        <div class="video-stats">12 videos • 89K total views</div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="thumbnail" style="background-image: url('https://placehold.co/400x225/232a3a/f97316?text=System+Design');"></div>
+                    <div class="video-info">
+                        <div class="video-title">📐 System Design Interview Prep</div>
+                        <div class="video-stats">6 videos • 34K total views</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="aboutTab" class="tab-content" style="display: none;">
+            <div class="about-section">
+                <h3>📌 About DevMind Academy</h3>
+                <p>We teach modern software architecture, cloud computing, networking (IPv4, NAT, DHCP, subnetting), and system design. Our goal is to help engineers build scalable and resilient systems.</p>
+                <p>📅 Joined: Jan 15, 2024</p>
+                <p>🔗 <a href="#" style="color: var(--accent);">github.com/devmind</a> • <a href="#" style="color: var(--accent);">twitter.com/devmind</a></p>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div class="footer">
+    <p>© VidStream — Channel page | static prototype for system analysis & design</p>
+</div>
+
+<script>
+    const tabs = document.querySelectorAll('.tab-channel');
+    const contents = {
+        videos: document.getElementById('videosTab'),
+        playlists: document.getElementById('playlistsTab'),
+        about: document.getElementById('aboutTab')
+    };
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = tab.dataset.tab;
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            Object.values(contents).forEach(content => {
+                if(content) content.style.display = 'none';
+            });
+            if(contents[target]) contents[target].style.display = 'block';
+        });
+    });
+</script>
+</body>
+</html>

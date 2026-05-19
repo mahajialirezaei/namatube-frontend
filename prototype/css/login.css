@@ -1,0 +1,160 @@
+.auth-container {
+    max-width: 500px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+.auth-card {
+    background-color: var(--card-bg);
+    border-radius: 32px;
+    padding: 2rem;
+    border: 1px solid var(--border-dim);
+    box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.5);
+}
+
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-dim);
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #9ca3af;
+    cursor: pointer;
+    transition: 0.2s;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-btn.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.auth-form {
+    display: block;
+}
+
+.auth-form.hidden {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #cdd4e6;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: #1e212a;
+    border: 1px solid var(--border-dim);
+    border-radius: 20px;
+    color: white;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent);
+    background-color: #262a36;
+}
+
+.checkbox-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+}
+
+.checkbox-row label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-auth {
+    width: 100%;
+    background-color: var(--accent);
+    border: none;
+    padding: 0.9rem;
+    border-radius: 40px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #0b0c10;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 0.5rem;
+}
+
+.btn-auth:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.social-login {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 0.8rem;
+}
+
+.social-btn {
+    background-color: #232734;
+    border: 1px solid var(--border-dim);
+    padding: 0.6rem 1.2rem;
+    border-radius: 40px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.social-btn:hover {
+    background-color: var(--accent);
+    color: #0b0c10;
+}
+
+.twofa-section {
+    background-color: #1a1d26;
+    border-radius: 20px;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 3px solid var(--accent);
+}
+
+.twofa-section small {
+    color: #9ca3af;
+}
+
+.forgot-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+hr {
+    border-color: var(--border-dim);
+    margin: 1.5rem 0;
+}
