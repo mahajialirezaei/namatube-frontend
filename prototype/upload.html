@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidStream – Upload Video</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* additional styles specific to upload page */
+        .upload-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        .upload-card {
+            background-color: var(--card-bg);
+            border-radius: 28px;
+            padding: 2rem;
+            border: 1px solid var(--border-dim);
+        }
+        .upload-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .upload-header h2 {
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #f97316, #facc15);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #cdd4e6;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background-color: #1e212a;
+            border: 1px solid var(--border-dim);
+            border-radius: 16px;
+            color: white;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            background-color: #262a36;
+        }
+        .file-area {
+            border: 2px dashed var(--border-dim);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.2s;
+            background-color: #13151c;
+        }
+        .file-area:hover {
+            border-color: var(--accent);
+            background-color: #1a1d26;
+        }
+        .file-area input {
+            display: none;
+        }
+        .file-label {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #0b0c10;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+        .selected-file {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: normal;
+            cursor: pointer;
+        }
+        .checkbox-group input {
+            width: auto;
+            transform: scale(1.1);
+        }
+        .upload-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 2rem;
+        }
+        .btn-primary {
+            background-color: var(--accent);
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            font-weight: bold;
+            color: #0b0c10;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-secondary {
+            background-color: #2a2e3c;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            font-weight: bold;
+            color: #eef2ff;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-primary:hover, .btn-secondary:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.05);
+        }
+        @media (max-width: 700px) {
+            .upload-card {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="logo" onclick="location.href='index.html'">✦ VIDSTREAM</div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button>🔍</button>
+    </div>
+    <div class="user-actions">
+        <a href="upload.html" style="background-color: var(--accent); color: #0b0c10;">+ Upload</a>
+        <a href="login.html">Sign in</a>
+    </div>
+</div>
+
+<div class="upload-container">
+    <div class="upload-card">
+        <div class="upload-header">
+            <h2>📤 Upload a new video</h2>
+            <p>Share your content with the world</p>
+        </div>
+
+        <div class="form-group">
+            <label>🎬 Title *</label>
+            <input type="text" placeholder="e.g. Microservices Architecture Deep Dive" value="">
+        </div>
+
+        <div class="form-group">
+            <label>📝 Description</label>
+            <textarea rows="4" placeholder="Tell viewers about your video..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>🏷️ Category</label>
+            <select>
+                <option>Education</option>
+                <option selected>Science & Technology</option>
+                <option>Entertainment</option>
+                <option>Gaming</option>
+                <option>Music</option>
+                <option>Networking & IT</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>🔒 Privacy</label>
+            <div class="checkbox-group">
+                <label><input type="radio" name="privacy" checked> Public</label>
+                <label><input type="radio" name="privacy"> Unlisted</label>
+                <label><input type="radio" name="privacy"> Private</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>📁 Video file</label>
+            <div class="file-area" onclick="document.getElementById('videoFile').click()">
+                <div>🎥 Drag & drop or click to select</div>
+                <div style="font-size: 0.8rem; margin-top: 0.5rem;">MP4, MOV, AVI up to 10GB</div>
+                <input type="file" id="videoFile" accept="video/*" style="display: none;">
+                <div class="selected-file" id="fileInfo">No file selected</div>
+                <div class="file-label">Choose file</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>🏞️ Thumbnail</label>
+            <div class="file-area" style="padding: 1rem;" onclick="document.getElementById('thumbFile').click()">
+                <div>🖼️ Click to upload thumbnail (JPG/PNG)</div>
+                <input type="file" id="thumbFile" accept="image/*" style="display: none;">
+                <div class="selected-file" id="thumbInfo">No thumbnail selected</div>
+            </div>
+        </div>
+
+        <div class="upload-actions">
+            <button class="btn-secondary" onclick="history.back()">Cancel</button>
+            <button class="btn-primary" onclick="alert('(Demo) Your video would be uploaded. This is a static prototype.')">✨ Publish</button>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>© VidStream — Upload page | prototype for system analysis & design</p>
+</div>
+
+<script>
+    document.getElementById('videoFile').addEventListener('change', function(e) {
+        if(e.target.files.length > 0) {
+            document.getElementById('fileInfo').innerText = e.target.files[0].name;
+        } else {
+            document.getElementById('fileInfo').innerText = 'No file selected';
+        }
+    });
+    document.getElementById('thumbFile').addEventListener('change', function(e) {
+        if(e.target.files.length > 0) {
+            document.getElementById('thumbInfo').innerText = e.target.files[0].name;
+        } else {
+            document.getElementById('thumbInfo').innerText = 'No thumbnail selected';
+        }
+    });
+</script>
+</body>
+</html>
