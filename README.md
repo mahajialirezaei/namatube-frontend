@@ -1,4 +1,4 @@
-# 🎬 Namatube – System Analysis & Design for a Video Sharing Platform
+# 🎬 NamaFront – System Analysis & Design for a Video Sharing Platform
 
 > **Course Project: System Analysis & Design**  
 > **No server-side implementation – purely analysis, design, and documentation**
@@ -7,7 +7,7 @@
 
 ## 📌 Project Overview
 
-**Namatube** is an online video sharing platform (similar to YouTube) designed for the System Analysis & Design course. The goal is to produce a complete **requirements specification (Functional & Non-Functional)**, a **static HTML/CSS prototype**, and **architectural diagrams** following software engineering standards.
+**NamaFront** is an interactive, responsive user interface built using HTML5, CSS3, and Vanilla JavaScript. Key characteristics include: Comprehensive UI, Educational Elements, Dynamic Integration
 
 **Key decisions:**
 - We chose **traditional document-based requirements** (Word/PDF) over Jira to keep the SRS self-contained and version-controlled.
